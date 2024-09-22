@@ -10,8 +10,8 @@ const server = net.createServer((connection) => {
     const API_VERSIONS = [0, 1, 2, 3, 4];
 
     if (API_VERSIONS.includes(request_api_version.readUint16BE(0))) {
-      console.log(request_api_version.readUint16BE(0))
-      
+      console.log(request_api_version.readUint16BE(0));
+
       connection.write(correlation_id);
     } else {
       connection.write(correlation_id);
